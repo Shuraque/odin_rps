@@ -7,16 +7,21 @@
     <title>🪨 📜 ✂️</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="rock_paper_scissors.js"></script>
    
 </head>
 <body>
-   <!-- <div class="startMenu">
-        <h1 class="welcome"></h1>
-        <button id="start"></button>
-    </div>-->
+   <div class="startMenu">
+        <div id="optionsContainer">
+            <button id="rock">🪨</button>
+            <button id="paper">📜</button>
+            <button id="scissors">✂️</button>
+        </div>
+        <button id="start">START</button>
+    </div>
     <div class="game">
         <div id="human">
-            <div class="pfp">🗿</div>
+            <h2 class="pfp">🗿</h2>
             <div id="optionsContainer">
                 <button id="hrock">🪨</button>
                 <button id="hpaper">📜</button>
@@ -27,20 +32,20 @@
             </div>
         </div>
         <div id="comp">
-            <div class="pfp">🤖</div>
+            <h2 class="pfp">🤖</h2>
             <div id="optionsContainer">
                 <button id="crock">🪨</button>
                 <button id="cpaper">📜</button>
                 <button id="cscissors">✂️</button>
             </div>
-            <div class="comScore">
+            <div id="comScore">
                 <h2>0</h2>
             </div>
         </div>
     </div>
-    <!--<div class="endScreen">
-        <h2 class="replay"></h2>
-        <button id="again"></button>
-    </div>-->
+    <div class="endScreen">
+        <h2 class="won">placeholder text</h2>
+        <button id="again">PLAY AGAIN</button>
+    </div>
 </body>
 </html>
