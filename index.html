@@ -3,49 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <title>🪨 📜 ✂️</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script src="rock_paper_scissors.js"></script>
-   
+    
+    <link rel="stylesheet" href="common_style.css">
+    <link rel="stylesheet" href="layout_index.css">
 </head>
 <body>
-   <div class="startMenu">
-        <div id="optionsContainer">
-            <button id="rock">🪨</button>
-            <button id="paper">📜</button>
-            <button id="scissors">✂️</button>
-        </div>
-        <button id="start">START</button>
+    <div id="options_container">
+        <button id="rock">🪨</button>
+        <button id="paper">📜</button>
+        <button id="scissors">✂️</button>
     </div>
-    <div class="game">
-        <div id="human">
-            <h2 class="pfp">🗿</h2>
-            <div id="optionsContainer">
-                <button id="hrock">🪨</button>
-                <button id="hpaper">📜</button>
-                <button id="hscissors">✂️</button>
-            </div>
-            <div id="humanScore">
-                <h2>0</h2>
-            </div>
-        </div>
-        <div id="comp">
-            <h2 class="pfp">🤖</h2>
-            <div id="optionsContainer">
-                <button id="crock">🪨</button>
-                <button id="cpaper">📜</button>
-                <button id="cscissors">✂️</button>
-            </div>
-            <div id="comScore">
-                <h2>0</h2>
-            </div>
-        </div>
-    </div>
-    <div class="endScreen">
-        <h2 class="won">placeholder text</h2>
-        <button id="again">PLAY AGAIN</button>
-    </div>
+    <a href="./game.html" class="start_game">START</a>
+
+    <script src="rock_paper_scissors.js"></script>
+    <script src="interactive.js"></script>
 </body>
 </html>

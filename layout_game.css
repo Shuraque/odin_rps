@@ -1,0 +1,38 @@
+body, .humanScore, .comScore, .pfp, #optionsContainer {
+    display: flex;
+}
+
+/* Human and Computer Common Style */
+#human, #comp {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 80vh;
+    align-items: center;
+    padding: 10vh 0vh;
+}
+
+.pfp {
+    flex: 1 0 0;
+    font-size: 15vh;
+}
+
+#optionsContainer {
+    flex: 2 0 0;
+    align-items: center;
+}
+
+#humanScore, #comScore {
+    flex: 1 0 0;
+}
+
+#humanScore h2, #comScore h2 {
+    font-size: 15vh;
+}
+
+/* Separate Sections */
+
+#comp {
+    background-color: #1F271B;
+    color: #f2f2f2;
+}
