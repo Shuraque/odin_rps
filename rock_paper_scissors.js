@@ -1,4 +1,21 @@
 const moves =  ['Rock', 'Paper', 'Scissors'];
+
+const rock = document.querySelector("#hrock");
+const paper = document.querySelector("#hpaper");
+const scissors = document.querySelector("#hscissors");
+
+const crock = document.querySelector("#crock");
+const cpaper = document.querySelector("#cpaper");
+const cscissors = document.querySelector("#cscissors");
+
+const hscore = document.querySelector("#humanScore h2");
+const cscore = document.querySelector("#comScore h2");
+
+const hstatus = document.querySelector("#hpfp");
+const cstatus = document.querySelector("#cpfp");
+
+const endscreen = document.querySelector("h3");
+
 var humanScore= 0, computerScore = 0;
 
 function getComputerChoice() {
@@ -6,44 +23,44 @@ function getComputerChoice() {
     return moves[play];
 }
 
-function getHumanChoice() {
-    let move = ' ';
-    while ( !(moves.includes(move)) ) {
-        move = prompt('Your move', 'Rock');
-        move = move[0].toUpperCase()+ move.slice(1).toLowerCase();
-    }
-    return move;
-}
+function playRound(move, computerChoice) {
+    computerChoice = getComputerChoice();
 
-function playRound(humanChoice, computerChoice) {
-    if (moves.indexOf(humanChoice) == moves.indexOf(computerChoice) + 1 || moves.indexOf(humanChoice) == moves.indexOf(computerChoice) - 2) {
+    hstatus.textContent = move;
+    cstatus.textContent = computerChoice;
+
+    setTimeout(function() {
+        hstatus.textContent = "🗿";
+        cstatus.textContent = "🤖"; 
+      }, 1000);
+
+    
+    if (moves.indexOf(move) == moves.indexOf(computerChoice) + 1 || moves.indexOf(move) == moves.indexOf(computerChoice) - 2) {
         humanScore++;
-    } else if (moves.indexOf(humanChoice) == moves.indexOf(computerChoice)){
+        hscore.textContent = humanScore;
+        
+        if (humanScore != null) {
+            window.localStorage.setItem("hS", "" + humanScore);
+        }
+
+    } else if (moves.indexOf(move) == moves.indexOf(computerChoice)){
         return;
     } else {
         computerScore++;
-    }
-}
-
-function playGame(humanFunc, compFunc, roundFunc) {
-    let humanChoice, computerChoice;
-    for (let i = 0; i < 5; i++) {
+        cscore.textContent = computerScore;
         
-        humanChoice = humanFunc();
-        computerChoice = compFunc();
-        roundFunc(humanChoice, computerChoice);
+        if (computerChoice != null) {
+            window.localStorage.setItem("cS", "" + computerScore);
+        }
+    }    
 
-        console.log(computerChoice, humanChoice);
-        console.log(computerScore, humanScore);
-      }
-    
-    if (humanScore > computerScore) {
-        return 'Human wins with ' + humanScore + ' points.';
-    } else if (humanScore == computerScore) {
-        return 'Tie!!';
-    } else {
-        return 'Cybernet wins with ' + computerScore + ' points.';
+    if (humanScore + computerScore == 5){
+        window.location.href = "endscreen.html";
     }
+
+    
 }
 
-
+rock.addEventListener("click", function(){playRound(moves[0],  getComputerChoice); });
+paper.addEventListener("click", function(){playRound(moves[1],  getComputerChoice); });
+scissors.addEventListener("click", function(){playRound(moves[2],  getComputerChoice); });
